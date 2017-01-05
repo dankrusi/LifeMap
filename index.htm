@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Life Map</title>
+    <style>
+		body, html, #map {
+			height: 100%;
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		div.map-ui {
+			font-family: Roboto,Arial,sans-serif;
+			margin: 0px;
+			padding: 0px;
+			margin: 10px;
+			text-align: center;
+		    position: relative;
+		    color: rgb(0, 0, 0);
+		    font-family: Roboto, Arial, sans-serif;
+		    user-select: none;
+		    font-size: 11px;
+		    background-color: rgb(255, 255, 255);
+		    padding: 8px;
+		    border-bottom-left-radius: 2px;
+		    border-top-left-radius: 2px;
+		    -webkit-background-clip: padding-box;
+		    background-clip: padding-box;
+		    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+		    min-width: 22px;
+		    font-weight: 500;
+		}
+		div.map-ui a {
+			color: darkgray;
+			text-decoration: none;
+		}
+		div.map-ui a.selected {
+			color: black;
+		    font-weight: 900;
+		}
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+	<div class="map-ui" id="info"></div>
+	<div class="map-ui" id="tools">
+		<a class="button heatmap" href="javascript:toggleHeatmap();">Heatmap</a>
+		<a class="button markers" href="javascript:toggleMarkers();">Pins</a>
+		<a class="button lines" href="javascript:toggleLines();">Lines</a>
+	</div>
+	<div class="map-ui" id="filters">
+		<a class="button homes" href="javascript:toggleHomes();">Homes</a>
+		<a class="button trips" href="javascript:toggleTrips();">Trips</a>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="lifemap-styles.js"></script>
+	<script src="lifemap-data.js"></script>
+	<script src="lifemap.js"></script>
+	<!-- Add your Google API Key in the following javascript source... -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ2Yegx9qTU-Xmmy84TMWg8lNGYLdRcWY&callback=initMap&libraries=visualization"></script>
+  </body>
+</html>
